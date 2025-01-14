@@ -1,4 +1,16 @@
+<select [ngModel]="locale" (ngModelChange)="setLocale($event)">
+  @for (locale of locales; track locale) {
+    <option [value]="locale">{{ locale }}</option>
+  }
+</select>
+
 <ul>
-  <li i18n>One</li>
+  <li i18n="The number one">One</li>
   <li>{{ two }}</li>
+  <li i18n="@@template-message.with-id">Template message with ID</li>
+  <li>{{ componentMessageWithId }}</li>
+  <li>
+    <input type="text" placeholder="Placeholder text" i18n-placeholder />
+  </li>
+  <li i18n="@@app.greeting">Hello, {{ name }}!</li>
 </ul>

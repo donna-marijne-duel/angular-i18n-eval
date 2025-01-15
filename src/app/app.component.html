@@ -1,3 +1,9 @@
+<select [ngModel]="brand" (ngModelChange)="setBrand($event)">
+  @for (brand of brands; track brand) {
+    <option [value]="brand">{{ brand }}</option>
+  }
+</select>
+
 <select [ngModel]="locale" (ngModelChange)="setLocale($event)">
   @for (locale of locales; track locale) {
     <option [value]="locale">{{ locale }}</option>
@@ -7,10 +13,10 @@
 <ul>
   <li i18n="The number one">One</li>
   <li>{{ two }}</li>
-  <li i18n="@@template-message.with-id">Template message with ID</li>
-  <li>{{ componentMessageWithId }}</li>
   <li>
     <input type="text" placeholder="Placeholder text" i18n-placeholder />
   </li>
   <li i18n="@@app.greeting">Hello, {{ name }}!</li>
+  <li i18n="@@app.welcome">Welcome to your <strong>new portal!</strong></li>
+  <li i18n="@@app.copyright">© {{ copyrightYear }} All Rights Reserved</li>
 </ul>

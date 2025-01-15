@@ -1,0 +1,11 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "6983516129072435613": "One",
+    "8690804657230092209": "Placeholder text",
+    "app.greeting": "Hello, {$INTERPOLATION}!",
+    "app.welcome": "Welcome to your {$START_TAG_STRONG}new portal!{$CLOSE_TAG_STRONG}",
+    "app.copyright": "© {$INTERPOLATION} All Rights Reserved",
+    "3594109821899435342": "Two"
+  }
+}

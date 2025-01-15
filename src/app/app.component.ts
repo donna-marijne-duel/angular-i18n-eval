@@ -10,11 +10,19 @@ import { FormsModule } from "@angular/forms";
 export class AppComponent {
   protected locale = inject(LOCALE_ID);
 
-  protected locales = ["en", "de-DE"];
+  protected locales = ["en", "de-DE", "es"];
+
+  protected brand = localStorage.getItem("brand")!;
+  protected brands = ["jeans", "victoria's secret", "rabanne"];
 
   protected two = $localize`Two`;
-  protected componentMessageWithId = $localize`:@@component-message.with-id:Component message with ID`;
   protected name = "Dolores";
+  protected copyrightYear = 1999;
+
+  protected setBrand(brand: string): void {
+    localStorage.setItem("brand", brand);
+    window.location.reload();
+  }
 
   protected setLocale(locale: string): void {
     localStorage.setItem("locale", locale);

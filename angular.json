@@ -13,7 +13,7 @@
         "sourceLocale": "en-US",
         "locales": {
           "de-DE": {
-            "translation": "src/locale/messages.de-DE.xlf"
+            "translation": "public/locale/messages.de-DE.json"
           }
         }
       },
@@ -73,14 +73,12 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
-          "options": {
-            "buildTarget": "angular-i18n:build",
-            "format": "xlf",
-            "includeContext": true,
-            "outputPath": "src/locale",
-            "prettyNestedTags": false,
-            "targetFiles": ["messages.de-DE.xlf"]
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "configurations": {
+            "json": {
+              "format": "json",
+              "outFile": "src/locale/messages.json"
+            }
           }
         },
         "test": {
@@ -100,6 +98,15 @@
             ],
             "styles": ["src/styles.css"],
             "scripts": []
+          }
+        },
+        "merge-json-translations": {
+          "builder": "ngx-merge-json-translations:merge-json-translations",
+          "options": {
+            "locales": ["de-DE", "en", "es"],
+            "source": "src/locale",
+            "destination": "public/locale",
+            "sourceFile": "messages.json"
           }
         }
       }

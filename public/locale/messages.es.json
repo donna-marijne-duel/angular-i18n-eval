@@ -1,0 +1,11 @@
+{
+  "locale": "es",
+  "translations": {
+    "6983516129072435613": "Uno",
+    "8690804657230092209": "Marcador de posición",
+    "app.greeting": "Hola, {$INTERPOLATION}!",
+    "app.welcome": "Bienvenido a tu {$START_TAG_STRONG}nuevo portal!{$CLOSE_TAG_STRONG}",
+    "app.copyright": "© {$INTERPOLATION} Todos los derechos reservados",
+    "3594109821899435342": "Dos"
+  }
+}
